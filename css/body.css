@@ -1,0 +1,113 @@
+.icon .container .download-content {
+    width: 22%;
+    margin: 15px;
+    box-sizing: border-box;
+    float: left;
+    text-align: center;
+    border-radius: 20px;
+    cursor: pointer;
+    padding-top: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.22);
+    transition: .4s;
+    background: #f2f2f2;
+}
+
+.icon .container .download-content:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+        0 3px 6px rgba(0, 0, 0, 0.23);
+    transition: translate(0px, -8px);
+}
+
+.icon .container .download-content img {
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+
+.icon .container .download-content h3 {
+    text-align: center;
+    font-size: 22px;
+    margin: 0;
+    padding-top: 10px;
+    color: var(--skin-color);
+}
+
+.icon .container .download-content p {
+    text-align: center;
+    color: var(--skin-color);
+    padding-top: 0 8px;
+}
+
+
+.icon .container .download-content h6 {
+    font-size: 26px;
+    text-align: center;
+    color: #222f3e;
+    margin: 0;
+}
+
+.icon .container .download-content ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.icon .container .download-content li {
+    padding-top: 5px;
+}
+
+.icon .container .download-content .fa {
+    font-size: 20px;
+    transition: .4s;
+    margin: 3px;
+}
+
+.icon .container .download-content .checked {
+    color: var(--skin-color);
+}
+
+.icon .container .download-content .check-square {
+    color: green;
+}
+
+.icon .container .download-content .fa:hover {
+    transform: scale(1.3);
+    transition: .6s;
+}
+
+.icon .container .download-content button {
+    text-align: center;
+    font-size: 24px;
+    color: #ffffff;
+    width: 100%;
+    padding: 15px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    margin-top: 5px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background: var(--skin-color);
+}
+
+@media(max-width: 991px) {
+    .icon .container .download-content {
+        width: 40%;
+    }
+
+
+}
+
+
+
+@media(max-width: 450px) {
+    .icon .container .download-content {
+        width: 100%;
+    }
+
+}
