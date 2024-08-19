@@ -219,6 +219,11 @@ ul {
     transition: all 0.3s ease;
 }
 
+.btn-4:hover {
+    transform: scale(1.05);
+    background-color: green;
+    color: yellow;
+}
 
 
 .shodow-dark {
