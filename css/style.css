@@ -218,7 +218,7 @@ ul {
     font-weight: 500;
     padding: 5px 30px;
     color: white;
-    border-radius: 15px 0%;
+    border-radius: 5px;
     display: inline-block;
     white-space: nowrap;
     border: none;
@@ -227,6 +227,26 @@ ul {
 }
 
 .btn-4:hover {
+    transform: scale(1.05);
+    background-color: green;
+    color: yellow;
+}
+
+
+.btn-6 {
+    background: #37b182;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 25px;
+    display: inline-block;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.btn-6:hover {
     transform: scale(1.05);
     background-color: green;
     color: yellow;
