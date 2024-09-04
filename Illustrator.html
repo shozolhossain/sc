@@ -3,100 +3,299 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Illustrator Collections</title>
+    <title>PixelLab</title>
     <link rel="shortcup icon" type="image/ico" href="image/favicon/S-favicon.png">
-    <!--CSS File-->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/Skins/color-1.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!--===== Style Switcher =====-->
-    <link rel="stylesheet" href="css/Skins/color-1.css" class="alternate-style" title="color-1" disabled>
-    <link rel="stylesheet" href="css/Skins/color-2.css" class="alternate-style" title="color-2" disabled>
-    <link rel="stylesheet" href="css/Skins/color-3.css" class="alternate-style" title="color-3" disabled>
-    <link rel="stylesheet" href="css/Skins/color-4.css" class="alternate-style" title="color-4" disabled>
-    <link rel="stylesheet" href="css/Skins/color-5.css" class="alternate-style" title="color-5" disabled>
-    <link rel="stylesheet" href="css/style-switcher.css">
-    <link rel="stylesheet" href="css/body.css">
+
 </head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+
+    /*-- VARIABLES CSS--*/
+    /*Colores*/
+    :root {
+        --first-color: #E3F8FF;
+        --second-color: #DCFAFB;
+        --third-color: #FFE8DF;
+        --accent-color: #FF5151;
+        --dark-color: #161616;
+    }
+
+    /*Tipografia responsive*/
+    :root {
+        --body-font: 'Open Sans';
+        --h1-font-size: 1.5rem;
+        --h3-font-size: 1rem;
+        --normal-font-size: 0.938rem;
+        --smaller-font-size: 0.75rem;
+    }
+
+    @media screen and (min-width: 768px) {
+        :root {
+            --h1-font-size: 2rem;
+            --normal-font-size: 1rem;
+            --smaller-font-size: 0.813rem;
+        }
+    }
+
+    /*-- BASE --*/
+    *,
+    ::after,
+    ::before {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 2rem 0 0 0;
+        background-color: #fff;
+        color: var(--dark-color);
+        font-family: var(--body-font);
+    }
+
+    h1 {
+        font-size: var(--h1-font-size);
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    /*-- LAYAOUT --*/
+    .main {
+        padding: 2rem 0;
+    }
+
+    .bd-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        max-width: 1200px;
+        margin-left: 2.5rem;
+        margin-right: 2.5rem;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    /*-- PAGES --*/
+    .title-shop {
+        position: relative;
+        margin: 0 2.5rem;
+    }
+
+    .title-shop::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        width: 72px;
+        height: 2px;
+        background-color: var(--dark-color);
+        margin-left: .25rem;
+    }
+
+    /*-- COMPONENT --*/
+    .card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1.5rem 2rem;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+            0 10px 10px rgba(0, 0, 0, 0.22);
+        transition: .4s;
+    }
+
+    article:nth-child(1) {
+        background-color: var(--first-color);
+    }
+
+    article:nth-child(2) {
+        background-color: var(--second-color);
+    }
+
+    article:nth-child(3) {
+        background-color: var(--third-color);
+    }
+
+    article:nth-child(4) {
+        background-color: var(--second-color);
+    }
+
+    .card__img {
+        width: 180px;
+        height: 180px;
+        padding: 0 0;
+        transition: .5s;
+    }
+
+    .card__name {
+        position: absolute;
+        left: -25%;
+        top: 0;
+        width: 3.5rem;
+        height: 100%;
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        text-align: center;
+        background-color: var(--dark-color);
+        color: #fff;
+        font-weight: bold;
+        transition: .5s;
+    }
+
+    .card__icon {
+        font-size: 1.5rem;
+        color: var(--dark-color);
+    }
+
+    .card__icon:hover {
+        color: var(--accent-color);
+    }
+
+    .card__precis {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        transition: .5s;
+    }
+
+    .card__preci {
+        display: block;
+        text-align: center;
+    }
+
+    .card__preci--before {
+        font-size: var(--smaller-font-size);
+        color: var(--accent-color);
+        margin-bottom: .25rem;
+    }
+
+    .card__preci--now {
+        font-size: var(--h3-font-size);
+        font-weight: bold;
+    }
+
+    /*Move left*/
+    .card:hover {
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+            0 3px 6px rgba(0, 0, 0, 0.23);
+        transition: translate(0px, -8px);
+    }
+
+    .card:hover .card__name {
+        left: 0;
+    }
+
+    .card:hover .card__img {
+        transform: rotate(30deg);
+        margin-left: 3.5rem;
+    }
+
+    .card:hover .card__precis {
+        margin-left: 3.5rem;
+        padding: 0 1.5rem;
+    }
+
+    /*-- MEDIA QUERIES --*/
+    @media screen and (min-width: 1200px) {
+        body {
+            margin: 3rem 0 0 0;
+        }
+
+        .title-shop {
+            margin: 0 5rem;
+        }
+
+        .bd-grid {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+</style>
 
 <body>
-
-    <!--Main Container Start-->
-    <div class="main-container">
-        <!--Aside Start-->
-
-        <!---====Download Section Start====-->
-        <section class="icon section">
-            <div class="container">
-                <div class="row">
-                    <div class="section-title padd-15">
-                        <h2>All Illustrator Download</h2>
-                    </div>
-                </div>
-                <div class="download-content">
-                    <img src="/image/Software/graphic design/Illustrator-2020.png" alt="">
-                    <h3> Illustrator 2020</h3>
-                    <ul>
-                        <li class="fa fa-star checked"></li>
-                        <li class="fa fa-star checked"></li>
-                        <li class="fa fa-star checked"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-check-square" aria-hidden="true"></li>
-                    </ul>
-                    <a href="https://drive.google.com/uc?export=download&id=1ElFhWifPrnrl52EIEYiErwqI9dQTeqf_"
-                        class="btn-2">Download Now</a>
-                </div>
-                <div class="download-content">
-                    <img src="/image/Software/graphic design/Illustrator.png" alt="">
-                    <h3> Illustrator 2022</h3>
-                    <ul>
-                        <li class="fa fa-star checked"></li>
-                        <li class="fa fa-star checked"></li>
-                        <li class="fa fa-star checked"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-check-square" aria-hidden="true"></li>
-                    </ul>
-                    <a href="https://drive.google.com/uc?export=download&id=1A_UTa1EXGapA3AKT4ujART2IxukGKaxf"
-                        class="btn-2">Download Now</a>
-                </div>
-
+    <h1 class="title-shop">Illustrator</h1>
+    <main class="main bd-grid">
+        <article class="card">
+            <div class="card__img">
+                <img src="/image/Software/graphic design/Illustrator-2020.png" alt="">
             </div>
+            <div class="card__name">
+                <p>Illustrator 2020</p>
+            </div>
+            <div class="card__precis">
+                <a href="softwarelist.html" class="card__icon"><i class="fa-solid fa-house"></i></a>
+                <div>
+                    <span class="card__preci card__preci--before">Password: 0000</span>
+                    <span class="card__preci card__preci--now">Size: 1.3GB</span>
+                </div>
+                <a href="https://drive.google.com/uc?export=download&id=1ElFhWifPrnrl52EIEYiErwqI9dQTeqf_"
+                    class="card__icon"><i class="fa-solid fa-circle-down"></i></a>
+            </div>
+        </article>
+
+        <article class="card">
+            <div class="card__img">
+                <img src="/image/Software/graphic design/Illustrator.png" alt="">
+            </div>
+            <div class="card__name">
+                <p>Illustrator 2022</p>
+            </div>
+            <div class="card__precis">
+                <a href="softwarelist.html" class="card__icon"><i class="fa-solid fa-house"></i></a>
+                <div>
+                    <span class="card__preci card__preci--before">Password:</span>
+                    <span class="card__preci card__preci--now">Size: 1.8GB</span>
+                </div>
+                <a href="https://drive.google.com/uc?export=download&id=1A_UTa1EXGapA3AKT4ujART2IxukGKaxf"
+                    class="card__icon"><i class="fa-solid fa-circle-down"></i></a>
+            </div>
+        </article>
+        <article class="card">
+            <div class="card__img">
+                <img src="img/img3.png" alt="">
+            </div>
+            <div class="card__name">
+                <p>Panding......</p>
+            </div>
+            <div class="card__precis">
+                <a href="softwarelist.html" class="card__icon"><i class="fa-solid fa-house"></i></a>
+                <div>
+                    <span class="card__preci card__preci--before"></span>
+                    <span class="card__preci card__preci--now"></span>
+                </div>
+                <a href="" class="card__icon"><i class="fa-solid fa-circle-down"></i></a>
+            </div>
+        </article>
+        <article class="card">
+            <div class="card__img">
+                <img src="img/img3.png" alt="">
+            </div>
+            <div class="card__name">
+                <p>Panding......</p>
+            </div>
+            <div class="card__precis">
+                <a href="softwarelist.html" class="card__icon"><i class="fa-solid fa-house"></i></a>
+                <div>
+                    <span class="card__preci card__preci--before"></span>
+                    <span class="card__preci card__preci--now"></span>
+                </div>
+                <a href="" class="card__icon"><i class="fa-solid fa-circle-down"></i></a>
+            </div>
+        </article>
+
+    </main>
 
 
-        </section>
-        <!---====Download Section Start====-->
-
-        <!--===== Main Content Ends =====-->
-    </div>
-    <!--===== Main Container Ends =====-->
-    <!--===== Style Switcher Starts =====-->
-    <div class="style-switcher">
-        <div class="style-switcher-toggler s-icon">
-            <i class="fas fa-cog fa-spin"></i>
-        </div>
-        <div class="day-night s-icon">
-            <i class="fas fa-moon"></i>
-        </div>
-        <h4>Theme Colors</h4>
-        <div class="colors">
-            <span class="color-1" onclick="setActiveStyle('color-1')"></span>
-            <span class="color-2" onclick="setActiveStyle('color-2')"></span>
-            <span class="color-3" onclick="setActiveStyle('color-3')"></span>
-            <span class="color-4" onclick="setActiveStyle('color-4')"></span>
-            <span class="color-5" onclick="setActiveStyle('color-5')"></span>
-        </div>
-    </div>
-    <!--===== Style Switcher Ends =====-->
-    <!--===== JS File =====-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"
-        referrerpolicy="no-referrer"></script>
-    <script src="js/script.js"></script>
-    <script src="js/style-switcher.js"></script>
-
+    <!-- ICONS -->
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
 </body>
 
 </html>
